@@ -1,7 +1,7 @@
 var React = require('react')
 
 var TodoBox = React.createClass({
-  render: function() {
+  render: function () {
     return (
       <div className="todoBox">
         <h1>Todos</h1>
@@ -28,6 +28,9 @@ var TodoList = React.createClass({
 })
 
 var Todo = React.createClass({
+  propTypes: {
+    title: React.PropTypes.string.isRequired
+  },
   render: function () {
     return (
       <tr>
