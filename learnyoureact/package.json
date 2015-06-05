@@ -10,7 +10,10 @@
     "node-jsx": "^0.13.3",
     "react": "^0.13.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^10.2.3",
+    "reactify": "^1.1.1"
+  },
   "author": "Bressain Dinkelman",
   "license": "ISC"
 }
