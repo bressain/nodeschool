@@ -40,10 +40,19 @@ var TodoList = React.createClass({
     })
     this.updateNewTodo(this.state.titleValue, this.state.detailValue)
   },
+  deleteTodo: function (title) {
+    for (var i = 0; i < this.state.data.length; i++) {
+      if (this.state.data[i].title === title) {
+        this.state.data.splice(i, 1)
+        break;
+      }
+    }
+    this.updateNewTodo(this.state.titleValue, this.state.detailValue)
+  },
   render: function () {
     var todo = this.props.data.map(function (x) {
-      return <Todo title={x.title} key={x.title}>{x.detail}</Todo>
-    })
+      return <Todo onDelete={this.deleteTodo} title={x.title} key={x.title}>{x.detail}</Todo>
+    }, this)
 
     return (
       <div className="todoList">
@@ -67,14 +76,21 @@ var Todo = React.createClass({
     return { checked: false }
   },
   propTypes: {
-    title: React.PropTypes.string.isRequired
+    title: React.PropTypes.string.isRequired,
+    onDelete: React.PropTypes.func.isRequired
   },
   handleChange: function (e) {
     this.setState({ checked: !this.state.checked })
   },
+  _onDelete: function () {
+    this.props.onDelete(this.props.title);
+  },
   render: function () {
     return (
       <tr style={this.state.checked ? style.checkedTodo : style.notCheckedTodo}>
+        <td style={style.tableContent}>
+          <button onClick={this._onDelete}>X</button>
+        </td>
         <td style={style.tableContent}>
           <input type="checkbox" checked={this.state.checked} onChange={this.handleChange} />
         </td>
