@@ -1,12 +1,12 @@
 {
-  "name": "learnyoureact",
+  "name": "learnyoureact-bgd",
   "version": "1.0.0",
-  "description": "",
   "main": "program.js",
   "dependencies": {
     "body-parser": "^1.12.4",
     "express": "^4.12.4",
     "express-react-views": "^0.8.1",
+    "learnyoureact": "^0.9.14",
     "node-jsx": "^0.13.3",
     "react": "^0.13.3"
   },

@@ -1,0 +1,11 @@
+{
+  "name": "javascripting-bgd",
+  "version": "1.0.0",
+  "dependencies": {
+    "javascripting": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Bressain Dinkelman",
+  "license": "ISC"
+}
